@@ -3,7 +3,7 @@ package proyectoentornosfondo;
 public class Cliente {
 
     private String nombre;
-    private boolean atendido;
+    private boolean atendido = false;
     private int numLista;
     private String var = "";
 
@@ -45,22 +45,5 @@ public class Cliente {
         this.var = var;
     }
 
-    public void atender() {
-        if (!this.atendido) {
-            this.atendido = true;
-            System.out.println("El cliente " + this.nombre
-                    + " esta siendo atendido");
-        } else {
-            System.out.println("El cliente " + this.nombre + " ya ha sido atendido");
-        }
-    }
-
-    public void abandonar() {
-        if (this.atendido) {
-            this.atendido = false;
-            System.out.println("El cliente ha abandonado la cola");
-        } else {
-            System.out.println("El cliente no se encuentra en la cola");
-        }
-    }
+    
 }
