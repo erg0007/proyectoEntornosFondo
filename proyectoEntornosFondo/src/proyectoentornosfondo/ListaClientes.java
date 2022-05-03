@@ -2,7 +2,7 @@ package proyectoentornosfondo;
 
 public class ListaClientes {
 
-    private Cliente listaClientes[];
+    public Cliente listaClientes[];
     private int tamanioLista;
     private int numHuecos;
     private boolean atendido;
@@ -11,13 +11,35 @@ public class ListaClientes {
         this.tamanioLista = tamanioLista;
         this.listaClientes = new Cliente[tamanioLista];
     }
+    
+    public ListaClientes() {
+    }
+
+    public String aniadirCola(Cliente nuevo) {
+        String res = "";
+        boolean insertado = false;
+        for (int i = 0; i < listaClientes.length; i++) {
+            if (listaClientes[i] == null) {
+                nuevo.setNumLista(i);
+                listaClientes[i] = nuevo;
+                i = listaClientes.length + 1;
+                insertado = true;
+            }
+        }
+        if (insertado) {
+            res = "Se ha podido aÃ±adir el jugador";
+        } else {
+            res = "No se ha podido aÃ±adir el jugador";
+        }
+        return res;
+    }
 
     public void atender() {
-        for (int i = 0; i < listaClientes.length; i++) {
-            if (listaClientes[i].getNumLista() == 1) {
-                listaClientes[i].setAtendido(atendido);
-                abandonar();
-            }
+        if (!this.atendido) {
+            this.atendido = false;
+            System.out.println("El cliente esta siendo atendido");
+        } else {
+            System.out.println("El cliente ya se encuentra atentdido");
         }
     }
 
