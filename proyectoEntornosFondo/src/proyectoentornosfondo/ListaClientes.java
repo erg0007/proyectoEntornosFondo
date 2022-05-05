@@ -7,6 +7,7 @@ public class ListaClientes {
     private int numHuecos;
     private boolean atendido;
 
+    //Metodo constructor de lista de clientes, es decir una cola con turnos
     public ListaClientes(int tamanioLista) {
         this.tamanioLista = tamanioLista;
         this.listaClientes = new Cliente[tamanioLista];
@@ -15,6 +16,7 @@ public class ListaClientes {
     public ListaClientes() {
     }
 
+    //Aniade un cliente a la cola
     public String aniadirCola(Cliente nuevo) {
         String res = "";
         boolean insertado = false;
@@ -27,13 +29,14 @@ public class ListaClientes {
             }
         }
         if (insertado) {
-            res = "Se ha podido aÃ±adir el jugador";
+            res = "Se ha podido aniadir el cliente";
         } else {
-            res = "No se ha podido aÃ±adir el jugador";
+            res = "No se ha podido aniadir el cliente";
         }
         return res;
     }
 
+    //Metodo para atender a los clientes de la cola
     public void atender() {
         if (!this.atendido) {
             this.atendido = false;
@@ -43,6 +46,7 @@ public class ListaClientes {
         }
     }
 
+    //Metodo para que un cliente abandone la cola
     public void abandonar() {
         if (this.atendido) {
             this.atendido = false;

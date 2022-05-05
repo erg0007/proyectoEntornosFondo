@@ -5,6 +5,7 @@
  */
 package proyectoentornosfondo;
 
+//Debemos importar librerias para hacer los test con JUnit y Hamcrest
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -17,9 +18,8 @@ public class ListaClientesTest {
     public ListaClientesTest() {
     }
 
-    /**
-     * Test of atender method, of class ListaClientes.
-     */
+    
+    /*Este bloque se encarga de comprobar que el cliente no ha sido atendido*/
     @Test
     public void testAtenderCuandoElClienteNoEstaAtendido() {
         Cliente cliente = new Cliente("elena");
@@ -30,6 +30,7 @@ public class ListaClientesTest {
         assertEquals(cliente.isAtendido(), false);
     }
 
+    /*Este bloque se encarga de comprobar que el cliente SI ha sido atendido*/
     @Test
     public void testAtenderCuandoElClienteYaEstaAtendido() {
         
@@ -47,13 +48,13 @@ public class ListaClientesTest {
         assertEquals(cliente.isAtendido(), false);
     }
 
+    
     @Test
     public void testAbandonar() {
     }
 
-    /**
-     * Test of adelantarPuesto method, of class ListaClientes.
-     */
+    
+    /*Este bloque se encarga de comprobar que el cliente puede adelantar un puesto*/
     @Test
     public void testAdelantarPuesto() {
 

@@ -7,12 +7,14 @@ public class Cliente {
     private int numLista;
     private String var = "";
 
+    //Metodo constructor de clientes
     public Cliente(String nombre) {
         this.nombre = nombre;
         this.atendido = false;
         this.numLista = 0;
     }
 
+    //Getters y setters
     public String getNombre() {
         return nombre;
     }
